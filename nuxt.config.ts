@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["normalize.css/normalize.css"],
+  css: ["normalize.css/normalize.css", "~/assets/css/base.css"],
   typescript: {
     strict: true,
     shim: true,

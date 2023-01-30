@@ -1,0 +1,56 @@
+.text-h1 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 90%;
+  font-size: 46px;
+
+  text-transform: uppercase;
+}
+
+.text-h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+}
+
+.text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .text-h1 {
+    font-size: 84px;
+  }
+
+  .text-h2 {
+    font-size: 42px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .text-h1 {
+    font-size: 116px;
+  }
+
+  .text {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .text-h1 {
+    font-size: 138px;
+  }
+
+  .text-h2 {
+    font-size: 64px;
+  }
+}
