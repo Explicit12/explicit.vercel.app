@@ -5,7 +5,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@nuxtjs/apollo": "^5.0.0-alpha.2",
@@ -16,6 +17,8 @@
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "nuxt": "3.0.0-rc.11",
     "nuxt-purgecss": "^2.0.0",
     "nuxt-svgo": "^1.1.0",
@@ -25,5 +28,8 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "three": "^0.149.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
