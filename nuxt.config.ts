@@ -19,7 +19,6 @@ export default defineNuxtConfig({
           name: "geo.position",
           content: "49.04791247867182; 31.0413272122303",
         },
-        {},
       ],
     },
   },
@@ -56,5 +55,9 @@ export default defineNuxtConfig({
 
   imports: {
     autoImport: false,
+  },
+
+  vite: {
+    assetsInclude: "**/*.glb",
   },
 });
