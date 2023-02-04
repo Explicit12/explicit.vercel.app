@@ -30,6 +30,8 @@
         <BlurShapeSvg class="gradient__blur-shape" />
       </div>
     </main>
+
+    <TheFooter />
   </div>
 </template>
 
