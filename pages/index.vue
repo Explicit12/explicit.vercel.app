@@ -29,6 +29,23 @@
         <BlurShapeSvg class="gradient__blur-shape" />
         <BlurShapeSvg class="gradient__blur-shape" />
       </div>
+
+      <section class="about-me container">
+        <h2 class="text-h2 about-me__headline">Some words about me</h2>
+        <p class="text about-me__text">
+          I’m 20 years old, live in Kramatorsk, Ukraine. I began like a web
+          designer, but trying to get deeper knowledge about web, I have
+          discovered a world of coding and problem-solving. I have about one and
+          a half year of experience as a Front End developer, working on some
+          freelance and my personal projects. Also, I have an intermediate level
+          of English, freely speak Russian and Ukrainian.
+        </p>
+        <ul class="features">
+          <li class="features__item">Intermediate english level</li>
+          <li class="features__item">About 1.5 year of experience</li>
+          <li class="features__item">Understanding of good ui/ux</li>
+        </ul>
+      </section>
     </main>
 
     <TheFooter />
@@ -48,6 +65,8 @@
     overflow: hidden;
     margin-top: -76px;
   }
+
+  /* Hero screen styles starts */
 
   .hero-screen {
     padding-top: 76px;
@@ -168,6 +187,81 @@
 
     .hero-screen__content {
       flex-basis: 50%;
+    }
+  }
+
+  /* Hero screen styles ends */
+  /* ####################### */
+  /* About me styles starts */
+
+  .about-me {
+    padding: 80px 16px;
+  }
+
+  .about-me__headline {
+    padding-bottom: 16px;
+  }
+
+  .about-me__text {
+    max-width: 500px;
+  }
+
+  .features {
+    display: none;
+  }
+
+  @media screen and (min-width: 640px) {
+    .about-me__headline {
+      padding-bottom: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .about-me {
+      padding: 120px 16px;
+    }
+
+    .about-me__text {
+      max-width: 588px;
+      padding-bottom: 64px;
+    }
+
+    .features {
+      display: block;
+      list-style: none;
+      padding: 0;
+
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 100%;
+
+      text-transform: uppercase;
+    }
+
+    .features__item {
+      max-width: 282px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .features {
+      font-size: 32px;
+    }
+
+    .about-me__headline {
+      padding-bottom: 32px;
+    }
+
+    .about-me__text {
+      max-width: 966px;
+      padding-bottom: 82px;
     }
   }
 </style>
