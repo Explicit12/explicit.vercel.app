@@ -19,7 +19,7 @@
 
     font-family: "Inter";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: v-bind(String(fontSize) + "px");
 
     text-decoration: none;
