@@ -14,8 +14,8 @@
       </span>
 
       <span class="footer__notes">
-        <em> 3D model by readyplayer.me </em>
-        <em> Created by Dmytro Holdobin </em>
+        <em>3D model by readyplayer.me</em>
+        <em>Created by Dmytro Holdobin</em>
       </span>
     </div>
   </footer>
