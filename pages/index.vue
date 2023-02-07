@@ -1,5 +1,43 @@
 <script setup lang="ts">
+  import { ref, computed } from "vue";
+
+  import CSS3 from "~/assets/svg/logos/css3.svg";
+  import GraphQL from "~/assets/svg/logos/graphql.svg";
+  import Gulp from "~/assets/svg/logos/gulp.svg";
+  import HTML5 from "~/assets/svg/logos/html5.svg";
+  import JavaScript from "~/assets/svg/logos/javascript.svg";
+  import NuxtJS from "~/assets/svg/logos/nuxtjs.svg";
+  import Pinia from "~/assets/svg/logos/pinia.svg";
+  import PostCSS from "~/assets/svg/logos/postcss.svg";
+  import SASS from "~/assets/svg/logos/sass.svg";
+  import TailwindCSS from "~/assets/svg/logos/tailwindcss.svg";
+  import TypeScript from "~/assets/svg/logos/typescript.svg";
+  import Vite from "~/assets/svg/logos/vite.svg";
+  import VueUse from "~/assets/svg/logos/vue-use.svg";
+  import VueJS from "~/assets/svg/logos/vuejs.svg";
+  import Git from "~/assets/svg/logos/git.svg";
   import BlurShapeSvg from "~/assets/svg/blur-shape.svg";
+
+  const skills = Object.entries({
+    VueJS,
+    TypeScript,
+    JavaScript,
+    TailwindCSS,
+    NuxtJS,
+    Vite,
+    Pinia,
+    HTML5,
+    CSS3,
+    VueUse,
+    SASS,
+    PostCSS,
+    GraphQL,
+    Git,
+    Gulp,
+  });
+  const amoutSkillsToShow = ref(4);
+
+  const skillsToShow = computed(() => skills.slice(0, amoutSkillsToShow.value));
 </script>
 
 <template>
@@ -25,10 +63,45 @@
       </section>
 
       <div class="gradient">
-        <BlurShapeSvg class="gradient__blur-shape" />
-        <BlurShapeSvg class="gradient__blur-shape" />
-        <BlurShapeSvg class="gradient__blur-shape" />
+        <img :src="BlurShapeSvg" alt="Gradient" class="gradient__blur-shape" />
+        <img :src="BlurShapeSvg" alt="Gradient" class="gradient__blur-shape" />
+        <img :src="BlurShapeSvg" alt="Gradient" class="gradient__blur-shape" />
       </div>
+
+      <section class="skills container">
+        <h2 class="text-h2 skills__headline">Technologies i work with</h2>
+        <p class="text skills__text">
+          In my work I mostly use Vue.js 3, TypeScript or vanilla JavaScript and
+          Tailwind CSS for styling. I also open-minded to use any other
+          technology to effectively and quickly solve problems.
+        </p>
+
+        <ul class="skills__list">
+          <TransitionGroup name="skills__list">
+            <li
+              class="skills__list__item"
+              v-for="skill in skillsToShow"
+              :key="skill[0]"
+              :title="skill[0]"
+            >
+              <img
+                :src="skill[1]"
+                :alt="skill[0]"
+                class="skills__list__item__image"
+              />
+            </li>
+          </TransitionGroup>
+        </ul>
+
+        <AppButton
+          class="skills__show-more-btn"
+          v-if="amoutSkillsToShow === 4"
+          type="secondary"
+          @click="amoutSkillsToShow = skills.length"
+        >
+          Show the others
+        </AppButton>
+      </section>
 
       <section class="about-me container">
         <h2 class="text-h2 about-me__headline">Some words about me</h2>
@@ -55,6 +128,10 @@
 <style scoped>
   .index-page__header {
     z-index: 2;
+  }
+
+  .text {
+    color: var(--secondary-white);
   }
 
   .main {
@@ -191,6 +268,103 @@
   }
 
   /* Hero screen styles ends */
+  /* ####################### */
+  /* Skills styles starts */
+
+  .skills {
+    padding: 80px 16px;
+  }
+
+  .skills__headline {
+    padding-bottom: 16px;
+  }
+
+  .skills__text {
+    max-width: 500px;
+    padding-bottom: 24px;
+  }
+
+  .skills__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 0;
+  }
+
+  .skills__list__item {
+    background: rgba(65, 184, 131, 0.15);
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 120px;
+    width: 100%;
+
+    will-change: transform, opacity;
+
+    transition: transform 250ms;
+  }
+
+  .skills__list__item:hover {
+    cursor: help;
+    transition: transform 250ms;
+    will-change: transform;
+    transform: translateY(-5%);
+  }
+
+  .skills__list__item__image {
+    width: 100%;
+    max-width: 120px;
+    max-height: 120px;
+    height: auto;
+  }
+
+  .skills__list-enter-active,
+  .skills__list-leave-active {
+    transition: opacity 1s ease, transform 500ms ease-out;
+  }
+  .skills__list-enter-from,
+  .skills__list-leave-to {
+    opacity: 0;
+  }
+
+  .skills__list-enter-from {
+    transform: scale(0);
+  }
+
+  @media screen and (min-width: 640px) {
+    .skills__headline {
+      padding-bottom: 42px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .skills {
+      padding: 120px 16px;
+    }
+
+    .skills__text {
+      max-width: 588px;
+      padding-bottom: 64px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .skills__headline {
+      padding-bottom: 32px;
+    }
+
+    .skills__text {
+      max-width: 966px;
+      padding-bottom: 82px;
+    }
+  }
+
+  .skills__show-more-btn {
+    margin: 0 auto;
+  }
+
+  /* Skills styles ends */
   /* ####################### */
   /* About me styles starts */
 

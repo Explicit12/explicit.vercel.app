@@ -1,7 +1,23 @@
 <script setup lang="ts">
-  withDefaults(
-    defineProps<{ iconName: string; height?: number; width?: number }>(),
+  import { computed } from "vue";
+
+  const props = withDefaults(
+    defineProps<{
+      iconName: string;
+      height?: number | string;
+      width?: number | string;
+    }>(),
     { height: 24, width: 24 },
+  );
+
+  const finalWidth = computed(() =>
+    typeof props.width === "string" ? props.width : String(props.width) + "px",
+  );
+
+  const finalHeight = computed(() =>
+    typeof props.height === "string"
+      ? props.height
+      : String(props.height) + "px",
   );
 </script>
 
@@ -13,7 +29,7 @@
 
 <style scoped>
   .icon {
-    width: v-bind(String(width) + "px");
-    height: v-bind(String(height) + "px");
+    width: v-bind(finalWidth);
+    height: v-bind(finalHeight);
   }
 </style>
