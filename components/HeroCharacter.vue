@@ -24,6 +24,7 @@
   import idleAnimationFile from "~/assets/models/MaleIdle.glb";
 
   const canvas: Ref<HTMLCanvasElement | null> = ref(null);
+  const isCharacterLoaded = ref(false);
 
   const clock = new Clock();
   const camera = new PerspectiveCamera(75, 2, 0.1, 5);
@@ -121,12 +122,16 @@
         }
         return time;
       });
+
+      isCharacterLoaded.value = true;
     });
   });
 </script>
 
 <template>
-  <canvas class="three-scene" ref="canvas" />
+  <Transition name="fade">
+    <canvas v-show="isCharacterLoaded" class="three-scene" ref="canvas" />
+  </Transition>
 </template>
 
 <style scoped>
@@ -134,5 +139,15 @@
     height: 100%;
     width: 100%;
     display: block;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 250ms ease, filter 150ms ease-out;
+  }
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+    filter: blur(24px);
   }
 </style>
