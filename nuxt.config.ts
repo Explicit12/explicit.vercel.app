@@ -28,7 +28,6 @@ export default defineNuxtConfig({
     "@nuxtjs/apollo",
     "nuxt-purgecss",
     "@nuxtjs/html-validator",
-    "nuxt-svgo",
   ],
 
   googleFonts: {
