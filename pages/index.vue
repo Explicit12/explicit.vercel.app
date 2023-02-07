@@ -119,6 +119,29 @@
           <li class="features__item">Understanding of good ui/ux</li>
         </ul>
       </section>
+
+      <section class="contacts">
+        <div class="container">
+          <h2 class="text-h2 contacts__headline">Contacts</h2>
+          <ul class="contacts__list">
+            <li class="contacts__list__item">
+              <NuxtLink to="/" aria-label="Telegram">
+                <IconSprite icon-name="Telegram" width="100%" height="100%" />
+              </NuxtLink>
+            </li>
+            <li class="contacts__list__item">
+              <NuxtLink to="/" aria-label="LinkedIn">
+                <IconSprite icon-name="Linkedin" width="100%" height="100%" />
+              </NuxtLink>
+            </li>
+            <li class="contacts__list__item">
+              <NuxtLink to="/" aria-label="GitHub">
+                <IconSprite icon-name="Github" width="100%" height="100%" />
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <TheFooter />
@@ -436,6 +459,63 @@
     .about-me__text {
       max-width: 966px;
       padding-bottom: 82px;
+    }
+  }
+
+  /* About me styles ends */
+  /* ####################### */
+  /* Contacts styles starts */
+
+  .contacts {
+    padding: 80px 16px;
+  }
+
+  .contacts__headline {
+    padding-bottom: 16px;
+  }
+
+  .contacts {
+    background: linear-gradient(
+      180deg,
+      rgba(241, 77, 140, 0) 0%,
+      rgba(241, 77, 140, 0.2) 100%
+    );
+  }
+
+  .contacts__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 16px;
+  }
+
+  .contacts__list__item {
+    max-width: 60px;
+    max-height: 60px;
+    background: var(--primary-black-light);
+    border: 2px solid var(--primary-white);
+    border-radius: 8px;
+    padding: 16px;
+
+    transition: transform 250ms;
+  }
+
+  .contacts__list__item:hover {
+    transition: transform 250ms;
+    transform: translateY(-15%);
+  }
+
+  @media screen and (min-width: 640px) {
+    .contacts {
+      padding: 120px 16px;
+    }
+
+    .contacts__headline {
+      padding-bottom: 24px;
+    }
+
+    .skills__list {
+      gap: 24px;
     }
   }
 </style>
