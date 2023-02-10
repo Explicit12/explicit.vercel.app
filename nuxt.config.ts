@@ -23,26 +23,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    "@nuxtjs/google-fonts",
-    "@nuxtjs/apollo",
-    "nuxt-purgecss",
-    "@nuxtjs/html-validator",
-  ],
+  modules: ["@nuxtjs/google-fonts", "nuxt-purgecss", "@nuxtjs/html-validator"],
 
   googleFonts: {
     download: true,
     families: {
       Inter: [400, 500, 700, 900],
-    },
-  },
-
-  apollo: {
-    autoImports: false,
-    clients: {
-      default: {
-        httpEndpoint: "https://rickandmortyapi.com/graphql",
-      },
     },
   },
 

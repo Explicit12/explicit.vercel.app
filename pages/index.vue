@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { ref, computed } from "vue";
+  import { useFetch } from "#app";
 
   import CSS3 from "~/assets/svg/logos/css3.svg";
   import GraphQL from "~/assets/svg/logos/graphql.svg";
@@ -38,6 +39,9 @@
   const amoutSkillsToShow = ref(4);
 
   const skillsToShow = computed(() => skills.slice(0, amoutSkillsToShow.value));
+
+  const { data } = await useFetch("/api/github", { method: "PUT" });
+  console.log(data.value.viewer);
 </script>
 
 <template>
