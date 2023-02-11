@@ -19,6 +19,8 @@
   import Git from "~/assets/svg/logos/git.svg";
   import BlurShapeSvg from "~/assets/svg/blur-shape.svg";
 
+  import type { Ref } from "vue";
+
   const skills = Object.entries({
     VueJS,
     TypeScript,
@@ -37,10 +39,25 @@
     Gulp,
   });
   const amoutSkillsToShow = ref(4);
+  const { data: githubInfo } = await useFetch("/api/github");
+  const inView: Ref<Element[]> = ref([]);
 
   const skillsToShow = computed(() => skills.slice(0, amoutSkillsToShow.value));
+  const skillsInView = computed(() => {
+    return Boolean(inView.value.find((el) => el.id === "skills"));
+  });
+  const aboutMeInView = computed(() => {
+    return Boolean(inView.value.find((el) => el.id === "about-me"));
+  });
 
-  const { data: githubInfo } = await useFetch("/api/github");
+  function observerHanlder(entries: IntersectionObserverEntry[]): void {
+    const interactElement = entries.find(
+      (entry) => entry.isIntersecting,
+    )?.target;
+    if (interactElement && !inView.value.includes(interactElement)) {
+      inView.value.push(interactElement);
+    }
+  }
 </script>
 
 <template>
@@ -71,16 +88,22 @@
         <img :src="BlurShapeSvg" alt="Gradient" class="gradient__blur-shape" />
       </div>
 
-      <section class="skills container" id="skills">
-        <h2 class="text-h2 skills__headline">Technologies i work with</h2>
-        <p class="text skills__text">
-          In my work I mostly use Vue.js 3, TypeScript or vanilla JavaScript and
-          Tailwind CSS for styling. I also open-minded to use any other
-          technology to effectively and quickly solve problems.
-        </p>
+      <section
+        class="skills container"
+        id="skills"
+        v-interact="observerHanlder"
+      >
+        <div :class="{ fadeOut: !skillsInView, fadeIn: skillsInView }">
+          <h2 class="text-h2 skills__headline">Technologies i work with</h2>
+          <p class="text skills__text">
+            In my work I mostly use Vue.js 3, TypeScript or vanilla JavaScript
+            and Tailwind CSS for styling. I also open-minded to use any other
+            technology to effectively and quickly solve problems.
+          </p>
+        </div>
 
         <ul class="skills__list">
-          <TransitionGroup name="skills__list">
+          <TransitionGroup name="moveIn">
             <li
               class="skills__list__item"
               v-for="skill in skillsToShow"
@@ -145,16 +168,22 @@
         </ul>
       </section>
 
-      <section class="about-me container" id="about-me">
-        <h2 class="text-h2 about-me__headline">Some words about me</h2>
-        <p class="text about-me__text">
-          I’m 20 years old, live in Kramatorsk, Ukraine. I began like a web
-          designer, but trying to get deeper knowledge about web, I have
-          discovered a world of coding and problem-solving. I have about one and
-          a half year of experience as a Front End developer, working on some
-          freelance and my personal projects. Also, I have an intermediate level
-          of English, freely speak Russian and Ukrainian.
-        </p>
+      <section
+        class="about-me container"
+        id="about-me"
+        v-interact="observerHanlder"
+      >
+        <div :class="{ fadeOut: !aboutMeInView, fadeIn: aboutMeInView }">
+          <h2 class="text-h2 about-me__headline">Some words about me</h2>
+          <p class="text about-me__text">
+            I’m 20 years old, live in Kramatorsk, Ukraine. I began like a web
+            designer, but trying to get deeper knowledge about web, I have
+            discovered a world of coding and problem-solving. I have about one
+            and a half year of experience as a Front End developer, working on
+            some freelance and my personal projects. Also, I have an
+            intermediate level of English, freely speak Russian and Ukrainian.
+          </p>
+        </div>
         <ul class="features">
           <li class="features__item">Intermediate english level</li>
           <li class="features__item">About 1.5 year of experience</li>
@@ -381,19 +410,6 @@
     height: auto;
   }
 
-  .skills__list-enter-active,
-  .skills__list-leave-active {
-    transition: opacity 1s ease, transform 500ms ease-out;
-  }
-  .skills__list-enter-from,
-  .skills__list-leave-to {
-    opacity: 0;
-  }
-
-  .skills__list-enter-from {
-    transform: scale(0);
-  }
-
   @media screen and (min-width: 640px) {
     .skills__headline {
       padding-bottom: 42px;
@@ -617,5 +633,30 @@
     .skills__list {
       gap: 24px;
     }
+  }
+
+  .moveIn-enter-active,
+  .moveIn-leave-active {
+    transition: opacity 1s ease, transform 500ms ease-out;
+  }
+  .moveIn-enter-from,
+  .moveIn-leave-to {
+    opacity: 0;
+  }
+
+  .moveIn-enter-from {
+    transform: scale(0);
+  }
+
+  .fadeIn {
+    transition: opacity 1s, transfrom 500ms;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  .fadeOut {
+    transition: opacity 1s, transfrom 500ms;
+    opacity: 0;
+    transform: translateY(-10%);
   }
 </style>
