@@ -195,19 +195,25 @@
         <div class="container">
           <h2 class="text-h2 contacts__headline">Contacts</h2>
           <ul class="contacts__list">
-            <li class="contacts__list__item">
+            <li>
               <NuxtLink to="/" aria-label="Telegram">
-                <IconSprite icon-name="Telegram" width="100%" height="100%" />
+                <div class="contacts__list__item">
+                  <IconSprite icon-name="Telegram" width="100%" height="100%" />
+                </div>
               </NuxtLink>
             </li>
-            <li class="contacts__list__item">
+            <li>
               <NuxtLink to="/" aria-label="LinkedIn">
-                <IconSprite icon-name="Linkedin" width="100%" height="100%" />
+                <div class="contacts__list__item">
+                  <IconSprite icon-name="Linkedin" width="100%" height="100%" />
+                </div>
               </NuxtLink>
             </li>
-            <li class="contacts__list__item">
+            <li>
               <NuxtLink to="/" aria-label="GitHub">
-                <IconSprite icon-name="Github" width="100%" height="100%" />
+                <div class="contacts__list__item">
+                  <IconSprite icon-name="Github" width="100%" height="100%" />
+                </div>
               </NuxtLink>
             </li>
           </ul>
@@ -612,13 +618,14 @@
     border: 2px solid var(--primary-white);
     border-radius: 8px;
     padding: 16px;
+    display: grid;
 
     transition: transform 250ms;
   }
 
   .contacts__list__item:hover {
     transition: transform 250ms;
-    transform: translateY(-15%);
+    transform: translateY(-10%);
   }
 
   @media screen and (min-width: 640px) {
