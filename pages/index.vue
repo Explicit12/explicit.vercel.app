@@ -47,7 +47,7 @@
   <div class="index-page">
     <TheHeader class="index-page__header" />
     <main class="main">
-      <section class="hero-screen container">
+      <section class="hero-screen container" id="home">
         <div class="hero-screen__content">
           <h1 class="text-h1 hero-screen__headline">
             <span class="hero-screen__subtitle">
@@ -71,7 +71,7 @@
         <img :src="BlurShapeSvg" alt="Gradient" class="gradient__blur-shape" />
       </div>
 
-      <section class="skills container">
+      <section class="skills container" id="skills">
         <h2 class="text-h2 skills__headline">Technologies i work with</h2>
         <p class="text skills__text">
           In my work I mostly use Vue.js 3, TypeScript or vanilla JavaScript and
@@ -106,7 +106,7 @@
         </AppButton>
       </section>
 
-      <section v-if="githubInfo" class="github container">
+      <section v-if="githubInfo" class="github container" id="code">
         <h2 class="text-h2 github__headline">
           But stop talking about it, look at my code in action!
         </h2>
@@ -145,7 +145,7 @@
         </ul>
       </section>
 
-      <section class="about-me container">
+      <section class="about-me container" id="about-me">
         <h2 class="text-h2 about-me__headline">Some words about me</h2>
         <p class="text about-me__text">
           I’m 20 years old, live in Kramatorsk, Ukraine. I began like a web
@@ -162,7 +162,7 @@
         </ul>
       </section>
 
-      <section class="contacts">
+      <section class="contacts" id="contacts">
         <div class="container">
           <h2 class="text-h2 contacts__headline">Contacts</h2>
           <ul class="contacts__list">

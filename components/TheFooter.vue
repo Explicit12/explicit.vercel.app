@@ -2,12 +2,20 @@
   <footer class="footer text">
     <div class="footer__wrapper container">
       <span class="footer__links">
-        <CustomLink to="/" :font-size="16" color="var(--secondary-white)">
+        <CustomLink
+          to="https://github.com/Explicit12/resume"
+          :font-size="16"
+          color="var(--secondary-white)"
+        >
           <IconSprite icon-name="ExternalLink" :width="16" :height="16" />
           Source Code
         </CustomLink>
 
-        <CustomLink to="/" :font-size="16" color="var(--secondary-white)">
+        <CustomLink
+          to="https://github.com/Explicit12/resume/blob/main/LICENSE"
+          :font-size="16"
+          color="var(--secondary-white)"
+        >
           <IconSprite icon-name="ExternalLink" :width="16" :height="16" />
           License
         </CustomLink>

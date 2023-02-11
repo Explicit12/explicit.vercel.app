@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <nav class="header__navigation container">
-      <CustomLink to="/">
+      <CustomLink :to="{ path: '/', hash: '#home' }">
         <IconSprite icon-name="HyperLink" />
         Home
       </CustomLink>
@@ -15,25 +15,25 @@
       </AppButton>
       <ul class="header__navigation__anchor-links">
         <li>
-          <CustomLink to="/">
+          <CustomLink :to="{ path: '/', hash: '#skills' }">
             <IconSprite icon-name="HyperLink" />
             Skills
           </CustomLink>
         </li>
         <li>
-          <CustomLink to="/">
+          <CustomLink :to="{ path: '/', hash: '#code' }">
             <IconSprite icon-name="HyperLink" />
-            Portfolio
+            Code
           </CustomLink>
         </li>
         <li>
-          <CustomLink to="/">
+          <CustomLink :to="{ path: '/', hash: '#about-me' }">
             <IconSprite icon-name="HyperLink" />
             About me
           </CustomLink>
         </li>
         <li>
-          <CustomLink to="/">
+          <CustomLink :to="{ path: '/', hash: '#contacts' }">
             <IconSprite icon-name="HyperLink" />
             Contacts
           </CustomLink>
