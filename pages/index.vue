@@ -476,10 +476,6 @@
       gap: 24px;
       grid-template-columns: 1fr 1fr;
     }
-
-    .github__repos-list__item__discription {
-      padding-bottom: 24px;
-    }
   }
 
   @media screen and (min-width: 1024px) {
