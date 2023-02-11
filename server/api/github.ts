@@ -1,6 +1,8 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client/core/core.cjs";
 import GithubQuery from "~/server/queries/github";
 
+import type GitHubInfo from "~/types/GitHubInfo";
+
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
   cache: new InMemoryCache(),
@@ -21,5 +23,5 @@ export default defineEventHandler(async (event) => {
     query: GithubQuery,
   });
 
-  return { ...data };
+  return { ...(data as GitHubInfo) };
 });

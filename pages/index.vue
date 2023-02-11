@@ -40,8 +40,7 @@
 
   const skillsToShow = computed(() => skills.slice(0, amoutSkillsToShow.value));
 
-  const { data } = await useFetch("/api/github", { method: "PUT" });
-  console.log(data.value.viewer);
+  const { data: githubInfo } = await useFetch("/api/github");
 </script>
 
 <template>
@@ -107,6 +106,45 @@
         </AppButton>
       </section>
 
+      <section v-if="githubInfo" class="github container">
+        <h2 class="text-h2 github__headline">
+          But stop talking about it, look at my code in action!
+        </h2>
+
+        <div class="guthub-user">
+          <img
+            class="guthub-user__avatar"
+            :src="githubInfo.viewer.avatarUrl"
+            :alt="githubInfo.viewer.avatarUrl"
+          />
+          <div class="guthub-user__info">
+            <h3 class="text guthub-user__info__name">
+              {{ githubInfo.viewer.login }}
+            </h3>
+            <CustomLink :to="githubInfo.viewer.url">
+              <IconSprite icon-name="ExternalLink" />
+              {{ githubInfo.viewer.url }}
+            </CustomLink>
+          </div>
+        </div>
+
+        <ul class="github__repos-list">
+          <li
+            class="github__repos-list__item"
+            v-for="repo in githubInfo.viewer.pinnedItems.nodes"
+            :key="repo.name"
+          >
+            <GithubRepoCard
+              :name="repo.name"
+              :description="repo.description"
+              :url="repo.url"
+              :stargazer-count="repo.stargazerCount"
+              :languages="repo.languages"
+            />
+          </li>
+        </ul>
+      </section>
+
       <section class="about-me container">
         <h2 class="text-h2 about-me__headline">Some words about me</h2>
         <p class="text about-me__text">
@@ -156,11 +194,6 @@
   .index-page__header {
     z-index: 2;
   }
-
-  .text {
-    color: var(--secondary-white);
-  }
-
   .main {
     background-color: var(--primary-black);
     color: var(--primary-white);
@@ -307,6 +340,7 @@
   }
 
   .skills__text {
+    color: var(--secondary-white);
     max-width: 500px;
     padding-bottom: 24px;
   }
@@ -393,6 +427,70 @@
 
   /* Skills styles ends */
   /* ####################### */
+  /* github styles starts */
+
+  .github {
+    padding: 80px 16px;
+  }
+
+  .github__headline {
+    max-width: 976px;
+    padding-bottom: 16px;
+  }
+
+  .guthub-user {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 32px;
+  }
+
+  .guthub-user__info__name {
+    padding-bottom: 8px;
+  }
+
+  .guthub-user__avatar {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 8px;
+  }
+
+  .github__repos-list {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media screen and (min-width: 640px) {
+    .github__headline {
+      padding-bottom: 42px;
+    }
+
+    .guthub-user {
+      gap: 16px;
+      padding-bottom: 64px;
+    }
+
+    .github__repos-list {
+      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .github__repos-list__item__discription {
+      padding-bottom: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .github__repos-list {
+      gap: 32px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  /* github styles ends */
+  /* ####################### */
   /* About me styles starts */
 
   .about-me {
@@ -404,6 +502,7 @@
   }
 
   .about-me__text {
+    color: var(--secondary-white);
     max-width: 500px;
   }
 
