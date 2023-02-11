@@ -247,6 +247,7 @@
     position: absolute;
     top: -45vh;
     z-index: -2;
+    opacity: 0;
 
     animation: fadeIn 1s ease-in 0.5s forwards;
   }
