@@ -1,16 +1,21 @@
 <script setup lang="ts">
   import { computed } from "vue";
 
-  const props = defineProps<{
-    type: "primary" | "secondary";
-    block?: boolean;
-  }>();
+  const props = withDefaults(
+    defineProps<{
+      type: "primary" | "secondary";
+      block?: boolean;
+      tag?: string;
+    }>(),
+    { tag: "button" },
+  );
 
   const isPrimary = computed(() => props.type === "primary");
 </script>
 
 <template>
-  <button
+  <component
+    :is="tag"
     type="button"
     class="button"
     :class="{
@@ -20,7 +25,7 @@
     }"
   >
     <slot />
-  </button>
+  </component>
 </template>
 
 <style scoped>
@@ -28,6 +33,7 @@
     border: none;
     outline: none;
     background: none;
+    text-decoration: none;
 
     display: flex;
     justify-content: center;

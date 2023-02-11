@@ -72,7 +72,12 @@
             </span>
             Front End Developer
           </h1>
-          <AppButton class="hero-screen__button" type="primary">
+          <AppButton
+            class="hero-screen__button"
+            tag="a"
+            href="https://t.me/+380636045081"
+            type="primary"
+          >
             Contact me
             <IconSprite icon-name="Telegram" />
           </AppButton>
@@ -196,21 +201,24 @@
           <h2 class="text-h2 contacts__headline">Contacts</h2>
           <ul class="contacts__list">
             <li>
-              <NuxtLink to="/" aria-label="Telegram">
+              <NuxtLink to="https://t.me/+380636045081" aria-label="Telegram">
                 <div class="contacts__list__item">
                   <IconSprite icon-name="Telegram" width="100%" height="100%" />
                 </div>
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" aria-label="LinkedIn">
+              <NuxtLink
+                to="https://www.linkedin.com/in/dmytro-holdobin/"
+                aria-label="LinkedIn"
+              >
                 <div class="contacts__list__item">
                   <IconSprite icon-name="Linkedin" width="100%" height="100%" />
                 </div>
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" aria-label="GitHub">
+              <NuxtLink to="https://github.com/Explicit12" aria-label="GitHub">
                 <div class="contacts__list__item">
                   <IconSprite icon-name="Github" width="100%" height="100%" />
                 </div>
