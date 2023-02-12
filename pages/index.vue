@@ -174,7 +174,7 @@
             <h3 class="text guthub-user__info__name">
               {{ githubInfo.viewer.login }}
             </h3>
-            <CustomLink :to="githubInfo.viewer.url">
+            <CustomLink class="guthub-user__link" :to="githubInfo.viewer.url">
               <IconSprite icon-name="ExternalLink" />
               {{ githubInfo.viewer.url }}
             </CustomLink>
@@ -510,6 +510,10 @@
     border-radius: 8px;
   }
 
+  .guthub-user__link {
+    word-break: break-all;
+  }
+
   .github__repos-list {
     padding: 0;
     list-style: none;
@@ -651,7 +655,7 @@
     border: 2px solid var(--primary-white);
     border-radius: 8px;
     padding: 16px;
-    display: grid;
+    aspect-ratio: 1;
 
     transition: transform 250ms;
   }
