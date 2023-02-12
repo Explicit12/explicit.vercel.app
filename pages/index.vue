@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { ref, computed } from "vue";
+  import { ref, computed, onMounted, onUnmounted } from "vue";
   import { useFetch } from "#app";
 
   import CSS3 from "~/assets/svg/logos/css3.svg";
@@ -41,6 +41,7 @@
   const amoutSkillsToShow = ref(4);
   const { data: githubInfo } = await useFetch("/api/github");
   const inView: Ref<Element[]> = ref([]);
+  const isMobileMenuOpen = ref(false);
 
   const skillsToShow = computed(() => skills.slice(0, amoutSkillsToShow.value));
   const skillsInView = computed(() => {
@@ -58,11 +59,35 @@
       inView.value.push(interactElement);
     }
   }
+
+  function appResizeHandler(event: Event) {
+    if ((event.target as Window).innerWidth >= 1024 && isMobileMenuOpen.value) {
+      isMobileMenuOpen.value = false;
+    }
+  }
+
+  onMounted(() => {
+    window.addEventListener("resize", appResizeHandler);
+  });
+
+  onUnmounted(() => {
+    window.removeEventListener("resize", appResizeHandler);
+  });
 </script>
 
 <template>
   <div class="index-page">
-    <TheHeader class="index-page__header" />
+    <Teleport to="body">
+      <LazyMobileMenu
+        :open="isMobileMenuOpen"
+        @navigation="isMobileMenuOpen = false"
+        @close-mobile-menu-click="isMobileMenuOpen = false"
+      />
+    </Teleport>
+    <TheHeader
+      class="index-page__header"
+      @mobile-menu-click="isMobileMenuOpen = true"
+    />
     <main class="main">
       <section class="hero-screen container" id="home">
         <div class="hero-screen__content">
