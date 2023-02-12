@@ -46,6 +46,7 @@
     padding: 24px 24px 32px;
 
     display: grid;
+    grid-auto-rows: min-content 1fr;
     height: 100%;
     box-sizing: border-box;
   }
