@@ -48,6 +48,12 @@ export default defineNuxtConfig({
     shim: true,
   },
 
+  postcss: {
+    plugins: {
+      autoprefixer: {},
+    },
+  },
+
   imports: {
     autoImport: false,
   },
