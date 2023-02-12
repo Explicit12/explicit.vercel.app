@@ -5,7 +5,15 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
-      title: "Dmytro Holdobin",
+      title: "Dmytro Holdobin — Front End Developer",
+      link: [
+        {
+          name: "link",
+          rel: "icon",
+          type: "image/svg+xml",
+          href: "/favicon.svg",
+        },
+      ],
       meta: [
         { charset: "UTF-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1.0" },
