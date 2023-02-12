@@ -94,7 +94,7 @@
     gap: 16px;
   }
 
-  .mobile-menu__close-btn:focus {
+  :deep(.mobile-menu__close-btn:focus) {
     outline: none;
   }
 
