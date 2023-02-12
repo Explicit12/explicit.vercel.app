@@ -211,7 +211,7 @@
             discovered a world of coding and problem-solving. I have about one
             and a half year of experience as a Front End developer, working on
             some freelance and my personal projects. Also, I have an
-            intermediate level of English, freely speak Russian and Ukrainian.
+            intermediate English level, freely speak Russian and Ukrainian.
           </p>
         </div>
         <ul class="features">
