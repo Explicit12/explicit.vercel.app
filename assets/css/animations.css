@@ -8,22 +8,6 @@
   }
 }
 
-.moveIn-enter-active,
-.moveIn-leave-active {
-  transition: opacity 1s ease, transform 500ms ease-out;
-  will-change: opacity, transform;
-}
-.moveIn-enter-from,
-.moveIn-leave-to {
-  opacity: 0;
-  will-change: opacity, transform;
-}
-
-.moveIn-enter-from {
-  transform: scale(0);
-  will-change: transform, opacity;
-}
-
 .fadeIn {
   transition: opacity 1s, transfrom 250ms;
   transform: translateY(0%);

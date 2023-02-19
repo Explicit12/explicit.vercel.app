@@ -40,14 +40,12 @@
     Git,
     Gulp,
   });
-  const amoutSkillsToShow = ref(4);
   const { data: githubInfo } = await useFetch("/api/github");
   const inView: Ref<Element[]> = ref([]);
   const isLgAndBigger = useMediaQuery("(min-width: 1024px)");
   const isMdAndBigger = useMediaQuery("(min-width: 724px)");
   const isMobileMenuOpen = ref(false);
 
-  const skillsToShow = computed(() => skills.slice(0, amoutSkillsToShow.value));
   const skillsInView = computed(() => {
     return Boolean(inView.value.find((el) => el.id === "skills"));
   });
@@ -139,40 +137,29 @@
         v-interact="observerHanlder"
       >
         <div :class="{ fadeOut: !skillsInView, fadeIn: skillsInView }">
-          <h2 class="text-h2 skills__headline">Technologies i work with</h2>
+          <h2 class="text-h2 skills__headline">My technical skills</h2>
           <p class="text skills__text">
-            In my work I mostly use Vue.js 3, TypeScript or vanilla JavaScript
-            and Tailwind CSS for styling. I also open-minded to use any other
-            technology to effectively and quickly solve problems.
+            As a front-end developer, I have experience with several programming
+            languages, frameworks, libraries, and other tools. Here are a few of
+            my technical skills:
           </p>
         </div>
 
         <ul class="skills__list">
-          <TransitionGroup name="moveIn">
-            <li
-              class="skills__list__item"
-              v-for="skill in skillsToShow"
-              :key="skill[0]"
-              :title="skill[0]"
-            >
-              <img
-                :src="skill[1]"
-                :alt="skill[0]"
-                class="skills__list__item__image"
-                loading="lazy"
-              />
-            </li>
-          </TransitionGroup>
+          <li
+            class="skills__list__item"
+            v-for="skill in skills"
+            :key="skill[0]"
+            :title="skill[0]"
+          >
+            <img
+              :src="skill[1]"
+              :alt="skill[0]"
+              class="skills__list__item__image"
+              loading="lazy"
+            />
+          </li>
         </ul>
-
-        <AppButton
-          class="skills__show-more-btn"
-          v-if="amoutSkillsToShow === 4"
-          type="secondary"
-          @click="amoutSkillsToShow = skills.length"
-        >
-          Show the others
-        </AppButton>
       </section>
 
       <section v-if="githubInfo" class="github container" id="code">
@@ -436,9 +423,10 @@
   }
 
   .skills__list {
+    max-width: 1024px;
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 32px;
     padding: 0;
@@ -446,13 +434,12 @@
 
   .skills__list__item {
     background: rgba(65, 184, 131, 0.15);
-    border-radius: 12px;
-    padding: 40px;
-    max-width: 120px;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 42px;
     width: 100%;
 
-    will-change: transform, opacity;
-
+    will-change: transform;
     transition: transform 250ms;
   }
 
@@ -468,6 +455,7 @@
     max-width: 120px;
     max-height: 120px;
     height: auto;
+    aspect-ratio: 1;
   }
 
   @media screen and (min-width: 640px) {
@@ -483,7 +471,6 @@
 
     .skills__text {
       max-width: 588px;
-      padding-bottom: 64px;
     }
   }
 
@@ -494,12 +481,7 @@
 
     .skills__text {
       max-width: 966px;
-      padding-bottom: 82px;
     }
-  }
-
-  .skills__show-more-btn {
-    margin: 0 auto;
   }
 
   /* Skills styles ends */
