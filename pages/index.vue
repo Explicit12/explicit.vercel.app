@@ -220,21 +220,16 @@
         v-interact="observerHanlder"
       >
         <div :class="{ fadeOut: !aboutMeInView, fadeIn: aboutMeInView }">
-          <h2 class="text-h2 about-me__headline">Some words about me</h2>
+          <h2 class="text-h2 about-me__headline">Get to know me</h2>
           <p class="text about-me__text">
-            I’m 20 years old, live in Kramatorsk, Ukraine. I began like a web
-            designer, but trying to get deeper knowledge about web, I have
-            discovered a world of coding and problem-solving. I have about one
-            and a half year of experience as a Front End developer, working on
-            some freelance and my personal projects. Also, I have an
-            intermediate English level, freely speak Russian and Ukrainian.
+            I'm a passionate front-end developer from Ukraine. I've always been
+            interested in web development, and after learning the basics, I
+            quickly fell in love with it. When I'm not coding, I try to be up to
+            date with technologies, or learning new things. With my strong
+            attention to detail and problem-solving skills, I'm excited to take
+            on new challenges and make a positive impact on your project.
           </p>
         </div>
-        <ul class="features">
-          <li class="features__item">Intermediate english level</li>
-          <li class="features__item">About 1.5 year of experience</li>
-          <li class="features__item">Understanding of good ui/ux</li>
-        </ul>
       </section>
 
       <section class="contacts" id="contacts">
@@ -588,10 +583,6 @@
     max-width: 500px;
   }
 
-  .features {
-    display: none;
-  }
-
   @media screen and (min-width: 640px) {
     .about-me__headline {
       padding-bottom: 24px;
@@ -605,45 +596,16 @@
 
     .about-me__text {
       max-width: 588px;
-      padding-bottom: 64px;
-    }
-
-    .features {
-      display: block;
-      list-style: none;
-      padding: 0;
-
-      display: flex;
-      text-align: center;
-      justify-content: space-between;
-      align-items: center;
-
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 900;
-      font-size: 24px;
-      line-height: 100%;
-
-      text-transform: uppercase;
-    }
-
-    .features__item {
-      max-width: 282px;
     }
   }
 
   @media screen and (min-width: 1280px) {
-    .features {
-      font-size: 32px;
-    }
-
     .about-me__headline {
       padding-bottom: 32px;
     }
 
     .about-me__text {
       max-width: 966px;
-      padding-bottom: 82px;
     }
   }
 
