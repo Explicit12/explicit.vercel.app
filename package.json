@@ -33,8 +33,5 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  }
 }

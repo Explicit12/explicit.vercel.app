@@ -24,7 +24,7 @@
 
 <template>
   <Transition name="slideIn">
-    <nav class="mobile-menu" v-if="open">
+    <nav class="mobile-menu" v-show="open">
       <ul class="mobile-menu__nav-list" @click="handleNavigation">
         <li>
           <CustomLink :to="{ path: '/', hash: '#home' }">
@@ -94,7 +94,7 @@
     gap: 16px;
   }
 
-  :deep(.mobile-menu__close-btn:focus) {
+  .mobile-menu :deep(.mobile-menu__close-btn:focus) {
     outline: none;
   }
 

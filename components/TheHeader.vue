@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  defineEmits<{ (e: "mobileMenuClick"): void }>();
+  defineEmits<{ (event: "openMobileMenuClick"): void }>();
 </script>
 
 <template>
@@ -14,7 +14,7 @@
         class="header__navigation__menu-button"
         type="secondary"
         aria-label="Open mobile menu"
-        @click="$emit('mobileMenuClick')"
+        @click="$emit('openMobileMenuClick')"
       >
         <IconSprite icon-name="JustifyAlignment" />
       </AppButton>

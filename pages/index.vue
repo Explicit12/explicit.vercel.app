@@ -1,6 +1,8 @@
 <script setup lang="ts">
-  import { ref, computed, onMounted, onUnmounted } from "vue";
+  import { ref, computed, watch } from "vue";
   import { useFetch } from "#app";
+
+  import useMediaQuery from "~~/composables/useMediaQuery";
 
   import CSS3 from "~/assets/svg/logos/css3.svg";
   import GraphQL from "~/assets/svg/logos/graphql.svg";
@@ -41,6 +43,8 @@
   const amoutSkillsToShow = ref(4);
   const { data: githubInfo } = await useFetch("/api/github");
   const inView: Ref<Element[]> = ref([]);
+  const isLgAndBigger = useMediaQuery("(min-width: 1024px)");
+  const isMdAndBigger = useMediaQuery("(min-width: 724px)");
   const isMobileMenuOpen = ref(false);
 
   const skillsToShow = computed(() => skills.slice(0, amoutSkillsToShow.value));
@@ -60,36 +64,30 @@
     }
   }
 
-  function appResizeHandler(event: Event) {
-    if ((event.target as Window).innerWidth >= 1024 && isMobileMenuOpen.value) {
+  watch(isLgAndBigger, (newVal) => {
+    if (newVal && isMobileMenuOpen.value) {
       isMobileMenuOpen.value = false;
     }
-  }
-
-  onMounted(() => {
-    window.addEventListener("resize", appResizeHandler);
-  });
-
-  onUnmounted(() => {
-    window.removeEventListener("resize", appResizeHandler);
   });
 </script>
 
 <template>
   <div class="index-page">
     <Teleport to="body">
-      <LazyMobileMenu
-        :open="isMobileMenuOpen"
-        @navigation="isMobileMenuOpen = false"
-        @close-mobile-menu-click="isMobileMenuOpen = false"
-      />
+      <ClientOnly>
+        <LazyMobileMenu
+          :open="isMobileMenuOpen"
+          @navigation="isMobileMenuOpen = false"
+          @close-mobile-menu-click="isMobileMenuOpen = false"
+        />
+      </ClientOnly>
     </Teleport>
     <TheHeader
       class="index-page__header"
-      @mobile-menu-click="isMobileMenuOpen = true"
+      @open-mobile-menu-click="isMobileMenuOpen = true"
     />
     <main class="main">
-      <section class="hero-screen container" id="home">
+      <section class="hero-screen container">
         <div class="hero-screen__content">
           <h1 class="text-h1 hero-screen__headline">
             <span class="hero-screen__subtitle">
@@ -108,15 +106,32 @@
           </AppButton>
         </div>
         <div class="hero-screen__character-wrapper">
-          <HeroCharacter class="hero-screen__character-wrapper__character" />
+          <KeepAlive>
+            <HeroCharacter
+              v-if="isMdAndBigger"
+              class="hero-screen__character-wrapper__character"
+            />
+          </KeepAlive>
+        </div>
+
+        <div class="gradient">
+          <img
+            :src="BlurShapeSvg"
+            alt="Gradient"
+            class="gradient__blur-shape"
+          />
+          <img
+            :src="BlurShapeSvg"
+            alt="Gradient"
+            class="gradient__blur-shape"
+          />
+          <img
+            :src="BlurShapeSvg"
+            alt="Gradient"
+            class="gradient__blur-shape"
+          />
         </div>
       </section>
-
-      <div class="gradient">
-        <img :src="BlurShapeSvg" alt="Gradient" class="gradient__blur-shape" />
-        <img :src="BlurShapeSvg" alt="Gradient" class="gradient__blur-shape" />
-        <img :src="BlurShapeSvg" alt="Gradient" class="gradient__blur-shape" />
-      </div>
 
       <section
         class="skills container"
@@ -144,6 +159,7 @@
                 :src="skill[1]"
                 :alt="skill[0]"
                 class="skills__list__item__image"
+                loading="lazy"
               />
             </li>
           </TransitionGroup>
@@ -274,11 +290,12 @@
   /* Hero screen styles starts */
 
   .hero-screen {
-    padding-top: 76px;
     display: flex;
     justify-content: space-between;
     height: 100vh;
     max-height: 900px;
+    padding-top: 76px;
+    position: relative;
   }
 
   .hero-screen__subtitle {
@@ -310,13 +327,14 @@
 
   .gradient {
     pointer-events: none;
-    filter: blur(28px);
     transform: rotate(120deg);
     position: absolute;
-    top: -45vh;
     z-index: -2;
     opacity: 0;
+    max-height: 100%;
+    top: -10%;
 
+    will-change: opacity;
     animation: fadeIn 1s ease-in 0.5s forwards;
   }
 
@@ -325,11 +343,11 @@
   }
 
   .gradient__blur-shape:first-child {
-    transform: translateX(-25%) translateY(50%);
+    transform: translateX(-160px) translateY(50%);
   }
 
   .gradient__blur-shape:last-child {
-    transform: translateX(25%) translateY(-50%);
+    transform: translateX(160px) translateY(-50%);
   }
 
   @media screen and (min-width: 640px) and (min-height: 640px) {
@@ -345,7 +363,7 @@
       pointer-events: none;
       min-width: 530px;
       right: 0;
-      bottom: 10vh;
+      bottom: 20%;
     }
 
     .hero-screen__character-wrapper::after {
@@ -354,7 +372,7 @@
       height: 100%;
       width: 100%;
       min-width: 530px;
-      bottom: 10vh;
+      bottom: 20%;
       right: 0;
       z-index: 2;
       background: radial-gradient(
@@ -374,6 +392,14 @@
     .hero-screen__content {
       justify-content: center;
       align-items: flex-start;
+    }
+
+    .gradient {
+      right: -10%;
+    }
+
+    .gradient__blur-shape {
+      filter: blur(8px);
     }
   }
 
@@ -677,30 +703,5 @@
     .skills__list {
       gap: 24px;
     }
-  }
-
-  .moveIn-enter-active,
-  .moveIn-leave-active {
-    transition: opacity 1s ease, transform 500ms ease-out;
-  }
-  .moveIn-enter-from,
-  .moveIn-leave-to {
-    opacity: 0;
-  }
-
-  .moveIn-enter-from {
-    transform: scale(0);
-  }
-
-  .fadeIn {
-    transition: opacity 1s, transfrom 500ms;
-    transform: translateY(0%);
-    opacity: 1;
-  }
-
-  .fadeOut {
-    transition: opacity 1s, transfrom 500ms;
-    opacity: 0;
-    transform: translateY(-10%);
   }
 </style>
