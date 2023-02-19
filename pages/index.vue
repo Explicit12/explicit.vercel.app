@@ -164,7 +164,7 @@
 
       <section v-if="githubInfo" class="github container" id="code">
         <h2 class="text-h2 github__headline">
-          But stop talking about it, look at my code in action!
+          Discover My Github Projects and Contributions!
         </h2>
 
         <div class="guthub-user">
