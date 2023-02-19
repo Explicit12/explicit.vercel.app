@@ -60,5 +60,17 @@ export default defineNuxtConfig({
 
   vite: {
     assetsInclude: "**/*.glb",
+    optimizeDeps: {
+      exclude: ["three"],
+    },
+    build: {
+      rollupOptions: {
+        manualChunks(id) {
+          if (id.includes("node_modules/three/")) {
+            return "three";
+          }
+        },
+      },
+    },
   },
 });
