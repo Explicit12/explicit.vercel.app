@@ -1,6 +1,5 @@
 <script lang="ts" setup>
   import { ref, onMounted } from "vue";
-  import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
   import {
     PerspectiveCamera,
     ReinhardToneMapping,
@@ -10,7 +9,6 @@
     HemisphereLight,
     SpotLight,
     AnimationMixer,
-    Object3D,
   } from "three";
 
   import loadModel from "~~/utils/loadModel";
@@ -19,6 +17,8 @@
   import isSceneResizeNeeded from "~~/utils/isSceneResizeNeeded";
 
   import type { Ref } from "vue";
+  import type { Object3D } from "three";
+  import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 
   import charaterModelFile from "~/assets/models/character.glb";
   import idleAnimationFile from "~/assets/models/MaleIdle.glb";

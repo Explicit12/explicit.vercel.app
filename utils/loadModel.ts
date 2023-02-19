@@ -1,4 +1,5 @@
-import { GLTFLoader, GLTF } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default async function loadModel(path: string): Promise<GLTF> {
   const loader = new GLTFLoader();

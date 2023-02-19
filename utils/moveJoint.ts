@@ -1,5 +1,7 @@
-import { MathUtils, Object3D } from "three";
+import { MathUtils } from "three";
 import getMouseDegrees from "~/utils/getMouseDegrees";
+
+import type { Object3D } from "three";
 
 export default function moveJoint(
   mouseEvent: MouseEvent,

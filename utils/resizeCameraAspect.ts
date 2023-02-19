@@ -1,4 +1,4 @@
-import { PerspectiveCamera } from "three";
+import type { PerspectiveCamera } from "three";
 
 export default function resizeCameraAspect(
   canvas: HTMLCanvasElement,
