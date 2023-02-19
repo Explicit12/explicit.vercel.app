@@ -437,7 +437,7 @@
     max-width: 1024px;
     list-style: none;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 32px;
     padding: 0;
@@ -472,6 +472,10 @@
   @media screen and (min-width: 640px) {
     .skills__headline {
       padding-bottom: 42px;
+    }
+
+    .skills__list {
+      justify-content: flex-start;
     }
   }
 
@@ -599,7 +603,7 @@
   /* Contacts styles starts */
 
   .contacts {
-    padding: 80px 16px;
+    padding: 80px 0px;
   }
 
   .contacts__headline {
