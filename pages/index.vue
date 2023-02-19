@@ -221,7 +221,18 @@
 
       <section class="contacts" id="contacts">
         <div class="container">
-          <h2 class="text-h2 contacts__headline">Contacts</h2>
+          <h2 class="text-h2 contacts__headline">Let's connect!</h2>
+          <p class="text contacts__text">
+            If you have any questions or would like to discuss a potential
+            collaboration, please feel free to contact me via social media.
+            Whether you have a project in mind or just want to say hello, I'd
+            love to connect and chat.
+          </p>
+          <p class="text contacts__text">
+            In addition, I'm actively looking for job opportunities in my field,
+            so if you have any open position or would like to recommend, please
+            don't hesitate to get in touch.
+          </p>
           <ul class="contacts__list">
             <li>
               <NuxtLink to="https://t.me/+380636045081" aria-label="Telegram">
@@ -465,10 +476,6 @@
   }
 
   @media screen and (min-width: 1024px) {
-    .skills {
-      padding: 120px 16px;
-    }
-
     .skills__text {
       max-width: 588px;
     }
@@ -572,10 +579,6 @@
   }
 
   @media screen and (min-width: 1024px) {
-    .about-me {
-      padding: 120px 16px;
-    }
-
     .about-me__text {
       max-width: 588px;
     }
@@ -611,6 +614,12 @@
     );
   }
 
+  .contacts__text {
+    padding-bottom: 16px;
+    color: var(--secondary-white);
+    max-width: 500px;
+  }
+
   .contacts__list {
     padding: 0;
     list-style: none;
@@ -636,16 +645,24 @@
   }
 
   @media screen and (min-width: 640px) {
-    .contacts {
-      padding: 120px 16px;
-    }
-
     .contacts__headline {
       padding-bottom: 24px;
     }
 
     .skills__list {
       gap: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .contacts__text {
+      max-width: 588px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .contacts__text {
+      max-width: 966px;
     }
   }
 </style>
