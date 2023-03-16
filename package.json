@@ -5,7 +5,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@nuxt/image-edge": "1.0.0-27968280.9739e4d",
@@ -19,6 +20,8 @@
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "nuxt": "^3.3.1",
     "nuxt-purgecss": "^2.0.0",
     "nuxt-security": "^0.12.0",
@@ -38,5 +41,8 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "three": "^0.150.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
