@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/image-edge": "1.0.0-27968280.9739e4d",
+    "@nuxtjs/google-fonts": "^3.0.0",
+    "@nuxtjs/html-validator": "^1.2.4",
+    "@nuxtjs/robots": "^3.0.0",
+    "@types/three": "^0.149.0",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "nuxt": "^3.3.1",
+    "nuxt-purgecss": "^2.0.0",
+    "nuxt-security": "^0.12.0",
+    "nuxt-svgo": "^1.1.0",
+    "postcss": "^8.0.0",
+    "prettier": "^2.8.4",
+    "typescript": ">=2.8.0",
+    "vue": ">=2.5.0 <3.0.0 || >=3.0.0 <4.0.0",
+    "webpack": "^4.1.0 || ^5.0.0-0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.0",
+    "typescript": ">=2.8.0",
+    "vue": ">=2.5.0 <3.0.0 || >=3.0.0 <4.0.0",
+    "webpack": "^4.1.0 || ^5.0.0-0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "three": "^0.150.1"
+  }
+}
