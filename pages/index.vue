@@ -1,10 +1,18 @@
 <template>
   <main class="main">
     <BlocksHeroScreen id="home" />
-    <BlocksSkillsSection id="skills" />
-    <BlocksAboutMeSection id="code" />
-    <BlocksGitHubSection id="about-me" />
-    <BlocksContactsSection id="contacts" />
+    <ShowInView id="skills">
+      <LazyBlocksSkillsSection />
+    </ShowInView>
+    <ShowInView id="about-me">
+      <LazyBlocksAboutMeSection />
+    </ShowInView>
+
+    <BlocksGitHubSection id="code" />
+
+    <ShowInView id="contacts">
+      <LazyBlocksContactsSection />
+    </ShowInView>
   </main>
 </template>
 

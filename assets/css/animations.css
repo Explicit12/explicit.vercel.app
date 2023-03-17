@@ -1,13 +1,3 @@
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 .fadeIn {
   transition: opacity 1s, transfrom 250ms;
   transform: translateY(0%);

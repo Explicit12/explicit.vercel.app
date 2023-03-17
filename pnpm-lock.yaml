@@ -6,6 +6,7 @@ specifiers:
   "@nuxtjs/html-validator": ^1.2.4
   "@nuxtjs/robots": ^3.0.0
   "@types/three": ^0.149.0
+  "@types/uuid": ^9.0.1
   "@typescript-eslint/eslint-plugin": ^5.55.0
   "@typescript-eslint/parser": ^5.55.0
   autoprefixer: ^10.4.14
@@ -25,6 +26,7 @@ specifiers:
   prettier: ^2.8.4
   three: ^0.150.1
   typescript: ">=2.8.0"
+  uuid: ^9.0.0
   vue: ">=2.5.0 <3.0.0 || >=3.0.0 <4.0.0"
   webpack: ^4.1.0 || ^5.0.0-0
 
@@ -33,6 +35,7 @@ dependencies:
   graphql-request: 5.2.0_graphql@16.6.0
   normalize.css: 8.0.1
   three: 0.150.1
+  uuid: 9.0.0
 
 devDependencies:
   "@nuxt/image-edge": 1.0.0-27968280.9739e4d
@@ -40,6 +43,7 @@ devDependencies:
   "@nuxtjs/html-validator": 1.2.4
   "@nuxtjs/robots": 3.0.0
   "@types/three": 0.149.0
+  "@types/uuid": 9.0.1
   "@typescript-eslint/eslint-plugin": 5.55.0_qsnvknysi52qtaxqdyqyohkcku
   "@typescript-eslint/parser": 5.55.0_j4766f7ecgqbon3u7zlxn5zszu
   autoprefixer: 10.4.14_postcss@8.4.21
@@ -2337,6 +2341,13 @@ packages:
       "@types/node": 18.15.3
     dev: true
     optional: true
+
+  /@types/uuid/9.0.1:
+    resolution:
+      {
+        integrity: sha512-rFT3ak0/2trgvp4yYZo5iKFEPsET7vKydKF+VRCxlQ9bpheehyAJH89dAkaLEq/j/RZXJIqcgsmPJKUP1Z28HA==,
+      }
+    dev: true
 
   /@types/webxr/0.5.1:
     resolution:
@@ -10207,6 +10218,14 @@ packages:
     hasBin: true
     dev: true
     optional: true
+
+  /uuid/9.0.0:
+    resolution:
+      {
+        integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==,
+      }
+    hasBin: true
+    dev: false
 
   /vite-node/0.29.3:
     resolution:
