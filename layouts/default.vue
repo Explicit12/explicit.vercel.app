@@ -4,5 +4,6 @@ import TheHeader from '~~/components/TheHeader.vue';
   <div>
     <TheHeader />
     <slot />
+    <TheFooter />
   </div>
 </template>
