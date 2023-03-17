@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <section v-if="githubInfo" class="github container" id="code">
+  <section v-if="githubInfo" class="github container">
     <h2 class="text-h2 github__headline">
       Discover My Github Projects and Contributions!
     </h2>

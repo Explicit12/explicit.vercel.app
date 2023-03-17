@@ -31,7 +31,7 @@
 </script>
 
 <template>
-  <section class="skills container" id="skills">
+  <section class="skills container">
     <div>
       <h2 class="text-h2 skills__headline">My technical skills</h2>
       <p class="text skills__text">

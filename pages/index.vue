@@ -1,10 +1,10 @@
 <template>
   <main class="main">
-    <BlocksHeroScreen />
-    <BlocksSkillsSection />
-    <BlocksAboutMeSection />
-    <BlocksGitHubSection />
-    <BlocksContactsSection />
+    <BlocksHeroScreen id="home" />
+    <BlocksSkillsSection id="skills" />
+    <BlocksAboutMeSection id="code" />
+    <BlocksGitHubSection id="about-me" />
+    <BlocksContactsSection id="contacts" />
   </main>
 </template>
 
