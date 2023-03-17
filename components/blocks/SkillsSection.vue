@@ -55,35 +55,35 @@
 
 <style scoped>
   .skills {
-    padding: 80px 16px;
+    padding: 5rem 1rem;
   }
 
   .skills__headline {
     color: var(--primary-white);
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
   }
 
   .skills__text {
     color: var(--secondary-white);
-    max-width: 500px;
-    padding-bottom: 24px;
+    max-width: 31.25rem;
+    padding-bottom: 1.5rem;
   }
 
   .skills__list {
-    max-width: 1024px;
+    max-width: 64rem;
     list-style: none;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 2rem;
     padding: 0;
   }
 
   .skills__list__item {
     background: rgba(65, 184, 131, 0.15);
-    border-radius: 8px;
-    padding: 16px;
-    max-width: 42px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    max-width: 2.625rem;
     width: 100%;
 
     will-change: transform;
@@ -98,15 +98,15 @@
   }
 
   .skills__list__item__image {
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 7.5rem;
+    max-height: 7.5rem;
     height: auto;
     aspect-ratio: 1;
   }
 
   @media screen and (min-width: 640px) {
     .skills__headline {
-      padding-bottom: 42px;
+      padding-bottom: 2.625rem;
     }
 
     .skills__list {
@@ -116,17 +116,17 @@
 
   @media screen and (min-width: 1024px) {
     .skills__text {
-      max-width: 588px;
+      max-width: 36.75rem;
     }
   }
 
   @media screen and (min-width: 1280px) {
     .skills__headline {
-      padding-bottom: 32px;
+      padding-bottom: 2rem;
     }
 
     .skills__text {
-      max-width: 966px;
+      max-width: 60.375rem;
     }
   }
 </style>
