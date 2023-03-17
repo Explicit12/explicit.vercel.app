@@ -1,0 +1,7 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+}
