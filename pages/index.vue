@@ -3,6 +3,7 @@
     <BlocksHeroScreen />
     <BlocksSkillsSection />
     <BlocksAboutMeSection />
+    <BlocksContactsSection />
   </main>
 </template>
 
