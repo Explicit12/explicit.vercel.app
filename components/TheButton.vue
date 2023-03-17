@@ -36,9 +36,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
 
-    padding: 18px 24px;
+    padding: 1.125rem 1.5rem;
     border-radius: 8px;
 
     font-family: "Inter";
@@ -68,7 +68,7 @@
   .button_primary:hover,
   .button_primary:focus {
     transition: box-shadow 250ms;
-    box-shadow: 0px 8px 19px rgba(255, 0, 98, 0.32);
+    box-shadow: 0px 0.5rem 1.1875rem rgba(255, 0, 98, 0.32);
     outline: var(--accent-light) solid 2px;
   }
 
