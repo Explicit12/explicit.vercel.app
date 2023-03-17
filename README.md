@@ -2,7 +2,6 @@
 
 - 3D model with mouse tracking
 - Cool SEO and perfomance with Nuxt.js and it's universal rendering
-- FadeIn animations on view
 
 # About the project
 
