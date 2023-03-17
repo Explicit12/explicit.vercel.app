@@ -10,9 +10,7 @@
 
     <BlocksGitHubSection id="code" />
 
-    <ShowInView id="contacts">
-      <LazyBlocksContactsSection />
-    </ShowInView>
+    <BlocksContactsSection id="contacts" />
   </main>
 </template>
 

@@ -1,7 +1,9 @@
 <script setup lang="ts">
   import useMediaQuery from "~~/composables/useMediaQuery";
 
-  import GradinetSVG from "~~/assets/svg/gradient.svg";
+  import GradinetSVG from "~~/assets/svg/gradient.svg?url";
+  import GradinetSVGTablet from "~~/assets/svg/gradient-tablet.svg?url";
+  import GradinetSVGMobile from "~~/assets/svg/gradient.svg?url";
   import TelegramIcon from "~~/assets/svg/icons/telegram.svg";
 
   const isMobile = useMediaQuery("(max-width: 640px)");
@@ -10,7 +12,11 @@
 <template>
   <section class="hero-screen container">
     <div class="gradient">
-      <GradinetSVG />
+      <img
+        :src="GradinetSVG"
+        :srcset="`${GradinetSVGMobile} 320w, ${GradinetSVGTablet} 640w, ${GradinetSVG} 1280w`"
+        alt=""
+      />
     </div>
     <div class="hero-screen__content">
       <h1 class="text-h1 hero-screen__headline">

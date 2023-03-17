@@ -33,7 +33,7 @@
 
 <style scoped>
   .show-view-container {
-    min-height: 20vh;
+    min-height: 75vh;
   }
 
   .fade-enter-active,
