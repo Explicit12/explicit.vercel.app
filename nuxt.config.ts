@@ -10,6 +10,17 @@ export default defineNuxtConfig({
     "@nuxt/image-edge",
   ],
 
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        value: {
+          "img-src": ["'self'", "*.githubusercontent.com", "data:"],
+        },
+        route: "/**",
+      },
+    },
+  },
+
   svgo: {
     svgo: false,
   },
