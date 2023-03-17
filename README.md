@@ -1,42 +1,16 @@
-# Nuxt 3 Minimal Starter
+## Features
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+- 3D model with mouse tracking
+- Cool SEO and perfomance with Nuxt.js and it's universal rendering
+- FadeIn animations on view
 
-## Setup
+# About the project
 
-Make sure to install the dependencies:
+Landing page about me and my skills. It uses nuxt 3 for good SEO and GraphQL to optimize data fetching from GitHub.
 
-```bash
-# yarn
-yarn install
+## Main tech stack
 
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Nuxt 3
+- TypeScript
+- ThreeJS
+- GraphQL
