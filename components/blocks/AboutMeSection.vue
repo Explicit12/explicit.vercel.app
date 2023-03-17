@@ -6,9 +6,9 @@
         I'm a passionate front-end developer from Ukraine. I've always been
         interested in web development, and after learning the basics, I quickly
         fell in love with it. When I'm not coding, I try to be up to date with
-        technologies, or learning new things. With my strong attention to detail
-        and problem-solving skills, I'm excited to take on new challenges and
-        make a positive impact on your project.
+        ne technologies. With my strong attention to details and problem-solving
+        skills, I'm excited to take on new challenges and make a positive impact
+        on your project.
       </p>
     </div>
   </section>
