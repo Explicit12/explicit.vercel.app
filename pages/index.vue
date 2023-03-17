@@ -1,6 +1,7 @@
 <template>
   <main class="main">
     <BlocksHeroScreen />
+    <BlocksSkillsSection />
   </main>
 </template>
 

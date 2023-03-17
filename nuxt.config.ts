@@ -10,6 +10,10 @@ export default defineNuxtConfig({
     "@nuxt/image-edge",
   ],
 
+  svgo: {
+    svgo: false,
+  },
+
   googleFonts: {
     download: true,
     families: {
