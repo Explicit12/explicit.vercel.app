@@ -33,4 +33,19 @@ export default defineNuxtConfig({
   imports: {
     autoImport: false,
   },
+
+  vite: {
+    assetsInclude: "**/*.glb",
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules/three/build/three.module.js")) {
+              return "three";
+            }
+          },
+        },
+      },
+    },
+  },
 });
