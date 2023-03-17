@@ -2,6 +2,7 @@
   <main class="main">
     <BlocksHeroScreen />
     <BlocksSkillsSection />
+    <BlocksAboutMeSection />
   </main>
 </template>
 
