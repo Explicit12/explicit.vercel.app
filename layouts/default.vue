@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="layout">
     <ClientOnly>
       <Teleport to="body">
         <LazyMobileMenu
@@ -24,7 +24,19 @@
       </Teleport>
     </ClientOnly>
     <TheHeader @open-mobile-menu-click="isMobileMenuOpen = true" />
-    <slot />
+    <div class="content-container">
+      <slot />
+    </div>
     <TheFooter />
   </div>
 </template>
+
+<style scoped>
+  .layout {
+    background-color: var(--primary-black);
+  }
+
+  .content-container {
+    min-height: 100vh;
+  }
+</style>
