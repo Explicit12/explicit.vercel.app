@@ -50,7 +50,8 @@
   .gradient {
     position: absolute;
     z-index: -1;
-    transform: translateY(-30%);
+    top: 0;
+    transform: scale(2);
   }
 
   .hero-screen {
@@ -138,11 +139,13 @@
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 920px) {
     .gradient {
-      top: 0;
+      transform: scale(1) translateY(-25%);
     }
+  }
 
+  @media screen and (min-width: 1280px) {
     .hero-screen__headline {
       padding-bottom: 32px;
     }

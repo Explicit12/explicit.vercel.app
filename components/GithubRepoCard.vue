@@ -21,12 +21,14 @@
           :to="url"
           class="link github-repo-card__header__headline__link"
         >
-          <RepoIcon class="icon" />
+          <RepoIcon
+            class="icon github-repo-card__header__headline__link__icon"
+          />
           {{ name }}
         </NuxtLink>
       </h3>
       <span class="github-repo-card__header__start-count">
-        <StartIcon class="icon" />
+        <StartIcon class="icon github-repo__card__header__icon" />
         {{ stargazerCount }}
       </span>
     </header>
@@ -67,11 +69,12 @@
     align-items: center;
   }
 
+  .github-repo-card__header__headline__link__icon {
+    display: none;
+  }
+
   .github-repo-card__header__start-count {
-    line-height: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: none;
   }
 
   .github-repo-card__header__headline,
@@ -102,6 +105,19 @@
     flex-wrap: wrap;
 
     align-self: end;
+  }
+
+  @media screen and (min-width: 480px) {
+    .github-repo-card__header__headline__link__icon {
+      display: block;
+    }
+
+    .github-repo-card__header__start-count {
+      line-height: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
   }
 
   @media screen and (min-width: 640px) {
