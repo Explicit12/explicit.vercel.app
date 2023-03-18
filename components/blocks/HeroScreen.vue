@@ -14,6 +14,8 @@
     <div class="gradient">
       <img
         :src="GradinetSVG"
+        width="1268"
+        height="724"
         :srcset="`${GradinetSVGMobile} 320w, ${GradinetSVGTablet} 640w, ${GradinetSVG} 1280w`"
         alt=""
       />

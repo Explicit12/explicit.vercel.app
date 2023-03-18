@@ -14,6 +14,8 @@
       <NuxtImg
         crossorigin="anonymous"
         class="guthub-user__avatar"
+        width="120"
+        height="120"
         :src="githubInfo.viewer.avatarUrl"
         alt="Github avatar"
       />
