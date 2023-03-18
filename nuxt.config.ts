@@ -62,6 +62,11 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
     shim: true,
+    tsConfig: {
+      compilerOptions: {
+        target: "ES2018",
+      },
+    },
   },
 
   postcss: {
