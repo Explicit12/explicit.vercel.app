@@ -2,10 +2,10 @@
   <main class="main">
     <BlocksHeroScreen id="home" />
     <ShowInView id="skills">
-      <LazyBlocksSkillsSection />
+      <BlocksSkillsSection />
     </ShowInView>
     <ShowInView id="about-me">
-      <LazyBlocksAboutMeSection />
+      <BlocksAboutMeSection />
     </ShowInView>
 
     <BlocksGitHubSection id="code" />
