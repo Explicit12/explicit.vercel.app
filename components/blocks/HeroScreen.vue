@@ -29,14 +29,16 @@
         <TelegramIcon class="icon" />
       </TheButton>
     </div>
-    <div class="hero-screen__character-wrapper">
-      <KeepAlive>
-        <LazyHeroCharacter
-          v-if="!isMobile"
-          class="hero-screen__character-wrapper__character"
-        />
-      </KeepAlive>
-    </div>
+    <ClientOnly>
+      <div class="hero-screen__character-wrapper">
+        <KeepAlive>
+          <LazyHeroCharacter
+            v-if="!isMobile"
+            class="hero-screen__character-wrapper__character"
+          />
+        </KeepAlive>
+      </div>
+    </ClientOnly>
   </section>
 </template>
 
