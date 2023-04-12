@@ -65,13 +65,10 @@
     .header__navigation__anchor-links {
       list-style-type: none;
 
+      gap: 2rem;
       padding: 0;
-      width: 100%;
-      max-width: 38rem;
-
       display: flex;
       align-items: center;
-      justify-content: space-between;
     }
   }
 </style>
