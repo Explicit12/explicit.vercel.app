@@ -9,12 +9,16 @@
 <template>
   <section class="hero-screen container">
     <div class="hero-screen__content">
-      <h1 class="text-h1 hero-screen__headline">
-        <span class="hero-screen__subtitle">
-          Hi, my name is Dmytro and I’m
-        </span>
-        Front End Developer
-      </h1>
+      <div>
+        <h1 class="text-h1 hero-screen__headline">Dmytro Holdobin</h1>
+
+        <p class="text hero-screen__text">
+          I am a front-end developer with nearly 2 years of experience in
+          developing web applications. I have some experience as freelancer and
+          have several pet projects on my GitHub. I am learning new technologies
+          and expanding my skills beyond front-end development.
+        </p>
+      </div>
       <TheButton
         class="hero-screen__button"
         tag="a"
@@ -46,21 +50,13 @@
     position: relative;
   }
 
-  .hero-screen__subtitle {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
+  .hero-screen__text {
     color: var(--secondary-white);
-    text-transform: none;
-    line-height: 1;
-
-    padding-bottom: 16px;
-    display: block;
   }
 
   .hero-screen__headline {
     color: var(--primary-white);
+    padding-bottom: 1rem;
   }
 
   .hero-screen__content {
@@ -85,7 +81,7 @@
       position: absolute;
       pointer-events: none;
       min-width: 530px;
-      right: 0;
+      right: -5rem;
       bottom: 20%;
     }
 
@@ -96,7 +92,7 @@
       width: 100%;
       min-width: 530px;
       bottom: 20%;
-      right: 0;
+      right: -5rem;
       z-index: 2;
       background: radial-gradient(
           49.81% 49.81% at 52.23% 100%,
@@ -108,8 +104,8 @@
   }
 
   @media screen and (min-width: 640px) {
-    .hero-screen__headline {
-      padding-bottom: 24px;
+    .hero-screen__text {
+      padding-bottom: 2rem;
     }
 
     .hero-screen__content {
@@ -119,15 +115,6 @@
   }
 
   @media screen and (min-width: 1280px) {
-    .hero-screen__headline {
-      padding-bottom: 32px;
-    }
-
-    .hero-screen__subtitle {
-      font-size: 24px;
-      padding-bottom: 24px;
-    }
-
     .hero-screen__content {
       flex-basis: 50%;
     }
