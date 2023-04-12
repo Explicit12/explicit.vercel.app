@@ -2,8 +2,16 @@
   <footer class="footer text">
     <div class="footer__wrapper container">
       <span class="footer__links">
-        <NuxtLink to="#" class="footer__links__link">Source Code</NuxtLink>
-        <NuxtLink to="#" class="footer__links__link">License</NuxtLink>
+        <NuxtLink
+          to="https://github.com/Explicit12/explicit.vercel.app"
+          class="footer__links__link"
+          >Source Code</NuxtLink
+        >
+        <NuxtLink
+          to="https://github.com/Explicit12/explicit.vercel.app/blob/main/LICENSE"
+          class="footer__links__link"
+          >License</NuxtLink
+        >
       </span>
 
       <span class="footer__notes">
