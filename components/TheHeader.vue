@@ -45,6 +45,7 @@
 
     background: rgba(12, 12, 13, 0.85);
     backdrop-filter: blur(8px);
+    overflow: hidden;
   }
 
   .header__navigation {
@@ -55,6 +56,10 @@
 
   .header__navigation__anchor-links {
     display: none;
+  }
+
+  .header__navigation__menu-button {
+    margin-right: -1.5rem;
   }
 
   @media screen and (min-width: 1024px) {
