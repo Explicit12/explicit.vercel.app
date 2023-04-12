@@ -31,16 +31,6 @@
             Code
           </IconLink>
         </li>
-        <li>
-          <IconLink type="hyperlink" :to="{ path: '/', hash: '#about-me' }">
-            About me
-          </IconLink>
-        </li>
-        <li>
-          <IconLink type="hyperlink" :to="{ path: '/', hash: '#contacts' }">
-            Contacts
-          </IconLink>
-        </li>
       </ul>
     </nav>
   </header>

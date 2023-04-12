@@ -4,13 +4,9 @@
     <ShowInView id="skills">
       <BlocksSkillsSection />
     </ShowInView>
-    <ShowInView id="about-me">
-      <BlocksAboutMeSection />
+    <ShowInView id="github">
+      <BlocksGitHubSection id="code" />
     </ShowInView>
-
-    <BlocksGitHubSection id="code" />
-
-    <BlocksContactsSection id="contacts" />
   </main>
 </template>
 
