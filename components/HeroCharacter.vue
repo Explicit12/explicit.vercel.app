@@ -12,14 +12,15 @@
   } from "three";
 
   import loadModel from "~~/utils/loadModel";
+
   import resizeCameraAspect from "~~/utils/resizeCameraAspect";
   import isSceneResizeNeeded from "~~/utils/isSceneResizeNeeded";
 
   import type { Ref } from "vue";
   import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 
-  import charaterModelFile from "~~/assets/models/character.glb";
-  import idleAnimationFile from "~~/assets/models/MaleIdle.glb";
+  import charaterModelFile from "~~/assets/models/character.glb?url";
+  import idleAnimationFile from "~~/assets/models/MaleIdle.glb?url";
 
   const canvas: Ref<HTMLCanvasElement | null> = ref(null);
   const isCharacterLoaded = ref(false);

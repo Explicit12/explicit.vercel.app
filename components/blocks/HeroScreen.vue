@@ -1,9 +1,6 @@
 <script setup lang="ts">
   import useMediaQuery from "~~/composables/useMediaQuery";
 
-  import GradinetSVG from "~~/assets/svg/gradient.svg?url";
-  import GradinetSVGTablet from "~~/assets/svg/gradient-tablet.svg?url";
-  import GradinetSVGMobile from "~~/assets/svg/gradient.svg?url";
   import TelegramIcon from "~~/assets/svg/icons/telegram.svg";
 
   const isMobile = useMediaQuery("(max-width: 640px)");
@@ -11,15 +8,6 @@
 
 <template>
   <section class="hero-screen container">
-    <div class="gradient">
-      <img
-        :src="GradinetSVG"
-        width="1268"
-        height="724"
-        :srcset="`${GradinetSVGMobile} 320w, ${GradinetSVGTablet} 640w, ${GradinetSVG} 1280w`"
-        alt=""
-      />
-    </div>
     <div class="hero-screen__content">
       <h1 class="text-h1 hero-screen__headline">
         <span class="hero-screen__subtitle">
@@ -49,13 +37,6 @@
 </template>
 
 <style scoped>
-  .gradient {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    transform: scale(2);
-  }
-
   .hero-screen {
     display: flex;
     justify-content: space-between;
@@ -90,10 +71,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-  }
-
-  .hero-screen__character-wrapper {
-    display: none;
   }
 
   @media screen and (min-width: 640px) and (min-height: 740px) {
@@ -138,12 +115,6 @@
     .hero-screen__content {
       justify-content: center;
       align-items: flex-start;
-    }
-  }
-
-  @media screen and (min-width: 920px) {
-    .gradient {
-      transform: scale(1) translateY(-25%);
     }
   }
 
